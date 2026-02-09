@@ -4,9 +4,11 @@ import { FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
   return (
     <footer className="border-t border-neutral-800 mt-24">
-      <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-end gap-6">
-        <div className="flex flex-col itemscenter">
-          <h4 className="text-xl max-w-md text-center md:text-left mb-4">
+      <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
+
+        {/* LEFT */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <h4 className="text-xl max-w-md mb-4">
             Level up your skills with data-driven insights and expert coaching.
           </h4>
 
@@ -15,8 +17,11 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col space-y-4">
-          <div className="flex gap-4 items-center justify-end">
+        {/* RIGHT */}
+        <div className="flex flex-col space-y-6 items-center md:items-end">
+
+          {/* Socials */}
+          <div className="flex gap-5">
             <a
               href="https://discord.gg/YOUR_INVITE"
               target="_blank"
@@ -54,11 +59,14 @@ export default function Footer() {
             </a>
           </div>
 
+          {/* Legal */}
           <div className="flex gap-6 text-sm text-gray-400">
-            <a href="#">Privacy</a>
-            <a href="#">Terms & condition</a>
+            <a href="#" className="hover:text-white transition">Privacy</a>
+            <a href="#" className="hover:text-white transition">Terms & Conditions</a>
           </div>
+
         </div>
+
       </div>
     </footer>
   );

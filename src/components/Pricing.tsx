@@ -1,7 +1,12 @@
+"use client";
+
 import PricingCard from "./PricingCard";
 import TeamCoaching from "./TeamCoaching";
+import useAutoCarousel from "@/src/hooks/useAutoCarousel";
 
 export default function Pricing() {
+  const sliderRef = useAutoCarousel(4500);
+
   const plans = [
     {
       title: "Basic Bundle",
@@ -37,11 +42,33 @@ export default function Pricing() {
         Pricing Plans
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      {/* Pricing Cards */}
+      <div
+        ref={sliderRef}
+        className="
+          flex md:grid
+          md:grid-cols-3
+          gap-6 md:gap-8
+          overflow-x-auto overflow-y-visible md:overflow-visible
+          snap-x snap-mandatory
+          -mx-6 px-6 py-6 md:mx-0 md:px-0 md:py-0
+          scrollbar-hide
+        "
+      >
         {plans.map(plan => (
-          <PricingCard key={plan.title} {...plan} />
+          <div
+            key={plan.title}
+            className="
+              min-w-[80%] md:min-w-0
+              snap-center
+            "
+          >
+            <PricingCard {...plan} />
+          </div>
         ))}
       </div>
+
+      {/* Team CTA */}
       <TeamCoaching />
 
     </section>

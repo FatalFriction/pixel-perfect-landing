@@ -21,11 +21,11 @@ export default function Features() {
           },
         ].map((item, i) => (
           <div key={i} className="flex gap-4">
-            <div className="w-4 h-4 bg-[#CC983F] rounded-full mt-2" />
+            <div className="w-24 h-8 md:w-4 md:h-4 bg-[#CC983F] rounded-full mt-2" />
 
             <div>
               <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="text-gray-400 text-md">{item.desc}</p>
+              <p className="text-gray-400 text-md pr-10 md:pr-0">{item.desc}</p>
             </div>
           </div>
         ))}

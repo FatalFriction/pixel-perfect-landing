@@ -24,7 +24,7 @@ export default function Cta() {
           className="mx-auto mb-8 w-72"
         />
 
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
           Rank Up Faster. Dominate Ranked.
           <br />
           Become Unstoppable.
