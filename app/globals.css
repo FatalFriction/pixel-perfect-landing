@@ -37,6 +37,13 @@ body {
   scrollbar-width: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
 
 @tailwind base;
 @tailwind components;

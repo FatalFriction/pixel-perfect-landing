@@ -2,7 +2,6 @@
 
 import useAutoCarousel from "../hooks/useAutoCarousel";
 
-
 export default function Coaches() {
   const sliderRef = useAutoCarousel(3500);
 
@@ -18,48 +17,57 @@ export default function Coaches() {
         mindset yang dibutuhkan untuk naik rank dengan konsisten.
       </p>
 
-      {/* Cards Wrapper */}
+      {/* Cards */}
       <div
         ref={sliderRef}
         className="
-          flex md:grid
-          md:grid-cols-3
+          flex md:grid md:grid-cols-3
           gap-6 md:gap-8
-          overflow-x-auto md:overflow-visible
+          overflow-visible md:overflow-visible
           snap-x snap-mandatory
           -mx-6 px-6 md:mx-0 md:px-0
-          scrollbar-hide
+          scrollbar-hide mt-30
         "
       >
         {[1, 2, 3].map((i) => (
           <div
             key={i}
             className="
-              min-w-[80%] md:min-w-0
-              snap-center
-              bg-[#896323]
-              rounded-xl
-              overflow-hidden
+              relative min-w-[80%] md:min-w-0 snap-center
+              rounded-2xl overflow-visible
               border border-[#FFAE22]
+              bg-[#896323]
+              shadow-[0_0_40px_rgba(204,152,63,0.35)]
             "
           >
-            {/* Image */}
-            <img src="/coach.png" className="w-full h-64 object-cover" />
+            {/* Coach Image */}
+            <img
+              src="/coach.png"
+              className="w-full h-85 md:h-95 object-cover relative -top-20"
+            />
 
-            {/* Gradient Info */}
+            {/* Radiant Badge */}
+            <span className="
+              absolute top-4 right-4
+              text-xs text-white px-3 py-1 rounded-full max-w-20 text-end
+            ">
+              Radiant Duelist
+            </span>
+
+            {/* Bottom Gradient Panel */}
             <div
               className="
-              relative p-4 pt-6 w-full
-              bg-[linear-gradient(to_top,#886323_0%,#886323_80%,transparent_100%)]
-            "
+                absolute bottom-0 left-0 w-full
+                px-6 pt-10 pb-6
+                text-center rounded-2xl 
+                bg-[linear-gradient(to_top,#8a6424_0%,#8a6424_70%,transparent_100%)]
+              "
             >
-              <h3 className="text-2xl text-center font-semibold text-[#FEFEB6]">
+              <h3 className="text-2xl font-semibold text-[#FEFEB6] mb-3">
                 Coach #{i}
               </h3>
 
-              <hr className="my-3 h-px bg-white/10 border-0 backdrop-blur-sm" />
-
-              <p className="text-sm text-white text-center">
+              <p className="text-sm text-white leading-relaxed">
                 Kaze dikenal dengan mechanical skill yang kuat dan agresivitas
                 yang terkontrol. Dia fokus pada crosshair placement, entry
                 timing, dan clutch consistency.

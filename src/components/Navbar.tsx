@@ -14,28 +14,28 @@ export default function Navbar() {
       {/* NAVBAR */}
       <header className="fixed top-0 w-full z-50 bg-black/70 backdrop-blur border-b border-neutral-800">
         <div className="relative max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-
           {/* LEFT */}
           <div className="flex items-center">
-            <img src="/logo.png" className="mr-4 w-10" />
-            <div className="font-bold text-lg">Pixel Perfect</div>
+            <Link href="/" className="flex items-center gap-3 cursor-pointer">
+              <img src="/logo.png" className="w-10" />
+              <span className="font-bold text-lg text-white">
+                Pixel Perfect
+              </span>
+            </Link>
 
             <nav className="hidden md:flex gap-8 text-sm text-gray-300 ml-20">
-              <Link href="#">Home</Link>
-              <Link href="#">How it Works</Link>
-              <Link href="#">Coaches</Link>
-              <Link href="#">Pricing</Link>
+              <Link href="/">Home</Link>
+              <Link href="#how-it-works">How it Works</Link>
+              <Link href="#coaches">Coaches</Link>
+              <Link href="#pricing">Pricing</Link>
             </nav>
           </div>
 
           {/* RIGHT */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 ">
+            <button className="block text-sm text-gray-300 transition cursor-pointer">Log in</button>
 
-            <button className="block text-sm text-gray-300">
-              Log in
-            </button>
-
-            <button className="block border border-[#CC983F] text-gray-300 px-4 py-1.5 rounded text-sm hover:bg-[#CC983F]/10 transition">
+            <button className="block border border-[#CC983F] text-gray-300 px-4 py-1.5 rounded text-sm hover:bg-[#CC983F]/10 transition cursor-pointer">
               Sign Up
             </button>
 
@@ -43,15 +43,12 @@ export default function Navbar() {
             <div className="hidden md:flex gap-3 ml-2">
               <DesktopSocials />
             </div>
-
           </div>
-
         </div>
       </header>
 
       {/* MOBILE FLOATING SOCIALS */}
       <div className="fixed top-24 right-4 z-40 flex flex-col gap-1 md:hidden">
-
         <SocialButton href="https://discord.gg/YOUR_INVITE">
           <FaDiscord size={18} />
         </SocialButton>
@@ -67,7 +64,6 @@ export default function Navbar() {
         <SocialButton href="https://facebook.com/YOUR_PAGE">
           <FaFacebook size={18} />
         </SocialButton>
-
       </div>
     </>
   );
