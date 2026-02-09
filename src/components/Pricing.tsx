@@ -15,6 +15,7 @@ export default function Pricing() {
       description:
         "A solid starting point if you just want the fundamentals without spending much.",
       features: ["Fundamental courses", "Perfect for beginners"],
+      ctaLink: "/checkout/basic",
     },
     {
       title: "Private Session",
@@ -22,25 +23,29 @@ export default function Pricing() {
       price: "990.000",
       description:
         "Personalized 1-on-1 coaching with detailed feedback and next steps.",
-      features: ["90-minute private session", "Direct feedback", "Clear next steps"],
+      features: [
+        "90-minute private session",
+        "Direct feedback",
+        "Clear next steps",
+      ],
       highlighted: true,
+      ctaLink: "/checkout/private",
+      ctaText: "Book a session",
     },
     {
       title: "1-on-1 Coaching",
       tag: "PRO",
       price: "1.990.000",
-      description:
-        "Long-term coaching designed for serious rank climbers.",
+      description: "Long-term coaching designed for serious rank climbers.",
       features: ["Weekly sessions", "Progress tracking", "Priority support"],
+      ctaLink: "/checkout/private",
+      ctaText: "Book a your plan",
     },
   ];
 
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
-
-      <h2 className="text-center text-3xl font-bold mb-12">
-        Pricing Plans
-      </h2>
+      <h2 className="text-center text-3xl font-bold mb-12">Pricing Plans</h2>
 
       {/* Pricing Cards */}
       <div
@@ -55,7 +60,7 @@ export default function Pricing() {
           scrollbar-hide
         "
       >
-        {plans.map(plan => (
+        {plans.map((plan) => (
           <div
             key={plan.title}
             className="
@@ -69,8 +74,7 @@ export default function Pricing() {
       </div>
 
       {/* Team CTA */}
-      <TeamCoaching />
-
+      <TeamCoaching ctaLink="/contact" ctaText="Contact Us" />
     </section>
   );
 }

@@ -1,10 +1,10 @@
+import Link from "next/link";
+
 export default function Cta() {
   return (
     <section className="relative pt-20 pb-40 text-center px-6 overflow-hidden">
-
       {/* BACKGROUND LAYERS */}
       <div className="absolute inset-0">
-
         {/* Spotlight */}
         <div
           className="
@@ -13,16 +13,11 @@ export default function Cta() {
             bg-[radial-gradient(circle,rgba(204,152,63,0.55),transparent_51%)]
           "
         />
-
       </div>
 
       {/* CONTENT */}
       <div className="relative z-10">
-
-        <img
-          src="/Radiant.png"
-          className="mx-auto mb-8 w-72"
-        />
+        <img src="/Radiant.png" className="mx-auto mb-8 w-72" />
 
         <h1 className="text-3xl md:text-5xl font-bold leading-tight">
           Rank Up Faster. Dominate Ranked.
@@ -36,12 +31,24 @@ export default function Cta() {
           konsisten tanpa grinding sendirian.
         </p>
 
-        <button className="mt-10 border border-[#CC983F] text-white px-8 py-3 rounded-lg hover:bg-[#CC983F]/50 transition">
+        <Link
+          href="/booking"
+          className="
+            mt-10
+            inline-block
+            border border-[#CC983F]
+            text-white
+            px-8 py-3
+            rounded-lg
+            hover:bg-[#CC983F]/50
+            transition
+            cursor-pointer
+            text-center
+          "
+        >
           Coaching Session Now
-        </button>
-
+        </Link>
       </div>
-
     </section>
   );
 }

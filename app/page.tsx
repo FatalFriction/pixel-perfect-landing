@@ -6,7 +6,6 @@ import Testimonials from "@/src/components/Testimonials";
 import FAQ from "@/src/components/FAQ";
 import Cta from "@/src/components/Cta";
 
-
 export default function Home() {
   return (
     <main className="relative bg-black text-white min-h-screen overflow-hidden">

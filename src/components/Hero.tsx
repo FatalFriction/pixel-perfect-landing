@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   const avatars = [
     "/avatar1.png",
@@ -99,9 +101,23 @@ export default function Hero() {
             </span>
           </div>
 
-          <button className="w-full bg-[#CC983F] text-white py-3 rounded font-semibold">
+          <Link
+            href="/booking"
+            className="
+              block w-full
+              bg-[#CC983F]
+              text-white
+              py-3
+              rounded
+              font-semibold
+              text-center
+              cursor-pointer
+              hover:bg-[#e0bb5c]
+              transition
+            "
+          >
             Analyze
-          </button>
+          </Link>
         </div>
       </div>
     </section>
