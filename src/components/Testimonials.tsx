@@ -7,7 +7,7 @@ export default function Testimonials() {
 
   return (
     <section className="px-6 py-24 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-12">
+      <h2 className="text-4xl font-bold text-center mb-12">
         From Stuck to Clutch — Their Stories
       </h2>
 

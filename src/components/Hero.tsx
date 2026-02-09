@@ -38,7 +38,7 @@ export default function Hero() {
             Let’s see what you’re made of.
           </h1>
 
-          <p className="mt-2 text-gray-400 max-w-xs text-center mx-auto">
+          <p className="mt-4 text-gray-400 max-w-xs text-center mx-auto text-xl">
             Masukkan <b className="text-white">Riot ID</b> dan biarkan kami
             membaca gameplay kamu.
           </p>
@@ -93,9 +93,9 @@ export default function Hero() {
             instructions provided in any email We send or by contacting Us.
           </p>
 
-          <div className="flex items-start gap-2 mb-6">
-            <input type="checkbox" className="mt-1" />
-            <span className="text-xs text-gray-400">
+          <div className="flex items-center gap-2 mb-6">
+            <input type="checkbox"/>
+            <span className="text-md text-gray-400">
               I agree with <b className="text-[#CC983F]">Terms & Conditions</b>{" "}
               and <b className="text-[#CC983F]">Privacy Policy</b>
             </span>

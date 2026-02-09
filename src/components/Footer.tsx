@@ -3,12 +3,12 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-800 mt-24">
+    <footer className="border-t border-neutral-800">
       <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
 
         {/* LEFT */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <h4 className="text-xl max-w-md mb-4">
+          <h4 className="text-lg md:text-3xl max-w-md mb-4">
             Level up your skills with data-driven insights and expert coaching.
           </h4>
 

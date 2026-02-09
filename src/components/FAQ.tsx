@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const faqs = [
   {
@@ -25,7 +26,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative z-10 max-w-6xl mx-auto px-6 my-32">
+    <section className="relative z-10 max-w-6xl mx-auto px-6 py-32 pb-62">
 
       <div className="grid md:grid-cols-2 gap-12 items-center">
 
@@ -35,7 +36,7 @@ export default function FAQ() {
             Frequent Asked Question
           </h2>
 
-          <p className="text-gray-400 max-w-sm text-center">
+          <p className="text-gray-400 max-w-lg text-center">
             Temukan jawaban cepat untuk pertanyaan seputar PixelPerfect,
             mulai dari fitur, coaching, hingga keamanan data.
           </p>
@@ -64,7 +65,7 @@ export default function FAQ() {
                 {/* Chevron */}
                 <span
                   className={`
-                    w-8 h-8 rounded-full
+                    w-9 h-9 rounded-full
                     bg-[#CC983F]
                     text-white
                     flex items-center justify-center
@@ -72,16 +73,15 @@ export default function FAQ() {
                     ${open === i ? "rotate-180" : ""}
                   `}
                 >
-                  ▼
+                  <MdKeyboardArrowDown size={60} />
                 </span>
               </button>
 
               {open === i && (
-                <div className="px-6 pb-4 text-sm text-[#cfc9a3]">
+                <div className="px-6 pb-4 text-sm text-white">
                   {item.a}
                 </div>
               )}
-
             </div>
           ))}
 

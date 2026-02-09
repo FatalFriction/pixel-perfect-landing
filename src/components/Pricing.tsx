@@ -45,7 +45,7 @@ export default function Pricing() {
 
   return (
     <section className="px-6 py-32 max-w-6xl mx-auto">
-      <h2 className="text-center text-3xl font-bold mb-12">Pricing Plans</h2>
+      <h2 className="text-center text-4xl font-bold mb-32">Pricing Plans</h2>
 
       {/* Pricing Cards */}
       <div

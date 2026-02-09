@@ -42,7 +42,7 @@ export default function TeamCoaching({
           w-full md:w-auto
           px-10 py-3 rounded-lg text-center
           bg-[#C9A24D]
-          text-black font-semibold
+          text-white font-semibold
           hover:bg-[#e0bb5c]
           transition
           whitespace-nowrap

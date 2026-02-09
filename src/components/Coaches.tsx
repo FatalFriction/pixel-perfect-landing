@@ -7,7 +7,7 @@ export default function Coaches() {
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-24">
-      <h2 className="text-3xl font-bold text-center mb-12">
+      <h2 className="text-4xl font-bold text-center mb-12">
         Meet Your Coaches
       </h2>
 
