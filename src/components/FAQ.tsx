@@ -25,7 +25,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative z-10 max-w-6xl mx-auto px-6 py-32">
+    <section className="relative z-10 max-w-6xl mx-auto px-6 my-32">
 
       <div className="grid md:grid-cols-2 gap-12 items-center">
 

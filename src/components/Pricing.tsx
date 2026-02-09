@@ -55,7 +55,7 @@ export default function Pricing() {
           md:grid-cols-3
           gap-6 md:gap-8
           overflow-x-auto overflow-y-visible md:overflow-visible
-          snap-x snap-mandatory
+          snap-x snap-mandatory touch-pan-x
           -mx-6 px-6 py-6 md:mx-0 md:px-0 md:py-0
           scrollbar-hide
         "

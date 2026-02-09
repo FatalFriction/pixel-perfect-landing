@@ -41,15 +41,16 @@ export default function PricingCard({
     >
       {/* SHINE */}
       <div
-        className="
-          pointer-events-none
-          absolute inset-0
-          rounded-2xl
-          opacity-0
-          group-hover:opacity-100
-          transition
-          bg-[radial-gradient(circle_at_top_left,rgba(201,162,77,0.25),transparent_60%)]
-        "
+        className={`
+    pointer-events-none
+    absolute inset-0 rounded-2xl
+    transition
+    ${
+      highlighted
+        ? "opacity-100 bg-[radial-gradient(circle_at_top,rgba(201,162,77,0.35),transparent_65%)]"
+        : "opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_left,rgba(201,162,77,0.25),transparent_60%)]"
+    }
+  `}
       />
 
       {/* Header */}
@@ -93,7 +94,7 @@ export default function PricingCard({
         className="
           relative block w-full py-3 rounded-lg text-center
           bg-[#C9A24D]
-          text-black font-semibold
+          text-white font-semibold
           hover:bg-[#e0bb5c]
           transition
           cursor-pointer

@@ -1,30 +1,36 @@
 import { useEffect, useRef } from "react";
 
-export default function useAutoCarousel(interval = 3500) {
-  const sliderRef = useRef<HTMLDivElement>(null);
+export default function useAutoCarousel(interval = 4000) {
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
+    if (!ref.current) return;
 
-    const cards = slider.children;
-    let index = 0;
+    // Disable auto scroll on mobile
+    if (window.innerWidth < 768) return;
 
-    const timer = setInterval(() => {
-      if (!slider || cards.length === 0) return;
+    const container = ref.current;
+    let scrollAmount = 0;
 
-      index = (index + 1) % cards.length;
+    const scroll = () => {
+      const maxScroll =
+        container.scrollWidth - container.clientWidth;
 
-      const target = cards[index] as HTMLElement;
+      if (scrollAmount >= maxScroll) {
+        scrollAmount = 0;
+      } else {
+        scrollAmount += container.clientWidth;
+      }
 
-      slider.scrollTo({
-        left: target.offsetLeft,
+      container.scrollTo({
+        left: scrollAmount,
         behavior: "smooth",
       });
-    }, interval);
+    };
 
-    return () => clearInterval(timer);
+    const id = setInterval(scroll, interval);
+    return () => clearInterval(id);
   }, [interval]);
 
-  return sliderRef;
+  return ref;
 }
