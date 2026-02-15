@@ -8,7 +8,7 @@ import Cta from "@/src/components/Cta";
 
 export default function Home() {
   return (
-    <main className="relative bg-black text-white min-h-screen overflow-hidden">
+    <main className="relative bg-black text-white min-h-screen overflow-x-hidden">
       {/* CENTER GOLD GLOW */}
       <div className="absolute inset-0 flex justify-center pointer-events-none">
         <div

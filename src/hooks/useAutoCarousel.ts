@@ -1,35 +1,46 @@
+// useAutoCarousel.tsx
 import { useEffect, useRef } from "react";
 
-export default function useAutoCarousel(interval = 4000) {
+export default function useAutoCarousel(interval = 4500) {
   const ref = useRef<HTMLDivElement | null>(null);
+  const isUserInteracting = useRef(false);
 
   useEffect(() => {
-    if (!ref.current) return;
-
-    // Disable auto scroll on mobile
-    if (window.innerWidth < 768) return;
-
     const container = ref.current;
-    let scrollAmount = 0;
+    if (!container) return;
 
-    const scroll = () => {
-      const maxScroll =
-        container.scrollWidth - container.clientWidth;
+    let id: NodeJS.Timeout;
 
-      if (scrollAmount >= maxScroll) {
-        scrollAmount = 0;
-      } else {
-        scrollAmount += container.clientWidth;
-      }
+    const startAutoScroll = () => {
+      id = setInterval(() => {
+        if (isUserInteracting.current) return;
 
-      container.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        if (maxScroll <= 0) return;
+
+        let nextScroll = container.scrollLeft + container.clientWidth;
+        if (nextScroll > maxScroll) nextScroll = 0;
+
+        container.scrollTo({ left: nextScroll, behavior: "smooth" });
+      }, interval);
     };
 
-    const id = setInterval(scroll, interval);
-    return () => clearInterval(id);
+    const handleTouchStart = () => { isUserInteracting.current = true; };
+    const handleTouchEnd = () => {
+      setTimeout(() => { isUserInteracting.current = false; }, 4000); // resume after pause
+    };
+
+    container.addEventListener("touchstart", handleTouchStart, { passive: true });
+    container.addEventListener("touchend", handleTouchEnd, { passive: true });
+    // Optional: also listen to mousedown / mouseup for desktop
+
+    startAutoScroll();
+
+    return () => {
+      clearInterval(id);
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchend", handleTouchEnd);
+    };
   }, [interval]);
 
   return ref;
