@@ -26,9 +26,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${urbanist.variable} ${oswald.variable} antialiased bg-black text-white`}
-      >
+      <body className={`${urbanist.variable} ${oswald.variable} antialiased bg-black text-white`}>
         <Navbar />
         {children}
         <Footer />

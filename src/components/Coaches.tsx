@@ -61,7 +61,7 @@ export default function Coaches() {
               <span
                 className="
     absolute top-4 right-4
-    text-xs text-white px-3 py-1 rounded-full max-w-20 text-end
+    text-xs text-white px-3 py-1 rounded-full max-w-16 text-end
     backdrop-blur-xl
     bg-white/10
     border border-white/20

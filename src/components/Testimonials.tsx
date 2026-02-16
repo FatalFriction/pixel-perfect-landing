@@ -15,9 +15,7 @@ export default function Testimonials() {
       {/* OUTER SCROLL */}
       <div
         ref={sliderRef}
-        className="
-    flex gap-6 
-    overflow-x-auto
+        className="relative flex gap-6 overflow-x-auto
     snap-x snap-mandatory
     scroll-smooth
     -mx-6 px-6 scrollbar-hide
