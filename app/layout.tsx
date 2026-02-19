@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Urbanist, Oswald } from "next/font/google";
 import "./globals.css";
-import Footer from "@/src/components/Footer";
-import Navbar from "@/src/components/Navbar";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -27,9 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${urbanist.variable} ${oswald.variable} antialiased bg-black text-white`}>
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );

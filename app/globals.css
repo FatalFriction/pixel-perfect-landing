@@ -58,7 +58,9 @@ body {
   font-family: var(--font-body);
 }
 
+.pp-calendar .rdp {
+  --rdp-cell-size: 40px;
+  background: transparent;
+}
 
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
