@@ -3,43 +3,27 @@
 import PricingCard from "./PricingCard";
 import useAutoCarousel from "@/src/hooks/useAutoCarousel";
 
-type Plan = {
-  title: string;
-  tag?: string;
-  price: string;
-  description: string;
-  features: string[];
-  highlighted?: boolean;
-  ctaLink?: string;
-  ctaText?: string;
-};
-
-export default function PricingGrid({
-  plans,
-  className = "",
-}: {
-  plans: Plan[];
-  className?: string;
-}) {
+export default function PricingGrid({ plans }: any) {
   const sliderRef = useAutoCarousel(4500);
 
   return (
     <div
       ref={sliderRef}
-      className={`
+      className="
         flex md:grid
         md:grid-cols-3
         gap-6 md:gap-8
-        overflow-x-auto overflow-y-visible md:overflow-visible
-        snap-x snap-mandatory touch-pan-x
+        overflow-x-auto md:overflow-visible
+        snap-x snap-mandatory
         scrollbar-hide
-        ${className}
-      `}
+        -mx-10 px-12 md:mx-0 md:px-0
+        py-4
+      "
     >
-      {plans.map((plan) => (
+      {plans.map((plan: any) => (
         <div
           key={plan.title}
-          className="min-w-[80%] md:min-w-0 snap-center"
+          className="snap-center shrink-0 min-w-[85%] md:min-w-0"
         >
           <PricingCard {...plan} />
         </div>

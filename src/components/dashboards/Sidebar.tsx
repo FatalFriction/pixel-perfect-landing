@@ -4,17 +4,13 @@ import { DashboardTab } from "./DashboardLayout";
 export default function Sidebar({
   active,
   onChange,
+  mobileOpen,
 }: {
   active: DashboardTab;
   onChange: (tab: DashboardTab) => void;
+  mobileOpen?: boolean;
 }) {
-  const Item = ({
-    id,
-    label,
-  }: {
-    id: DashboardTab;
-    label: string;
-  }) => {
+  const Item = ({ id, label }: { id: DashboardTab; label: string }) => {
     const isActive = active === id;
 
     return (
@@ -33,16 +29,23 @@ export default function Sidebar({
         <Image src="/gear.png" width={16} height={16} alt="" />
         {label}
 
-        {isActive && (
-          <span className="absolute inset-0 rounded-lg" />
-        )}
+        {isActive && <span className="absolute inset-0 rounded-lg" />}
       </button>
     );
   };
 
   return (
-    <aside className="hidden md:flex w-64 bg-[#2a2723] flex-col justify-between px-6 py-8">
-
+    <aside
+      className={`
+    fixed md:static z-50
+    top-0 left-0 min-h-full w-[80vw] md:w-64
+    bg-[#2a2723]
+    flex flex-col justify-between px-6 py-8
+    transition-transform duration-300
+    ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
+    md:translate-x-0
+  `}>
+    
       <div>
         {/* Logo */}
         <div className="flex items-center gap-2 mb-10">
