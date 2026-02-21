@@ -44,8 +44,8 @@ export default function Sidebar({
     transition-transform duration-300
     ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
     md:translate-x-0
-  `}>
-    
+  `}
+    >
       <div>
         {/* Logo */}
         <div className="flex items-center gap-2 mb-10">
@@ -78,7 +78,25 @@ export default function Sidebar({
         </nav>
       </div>
 
-      <div className="text-sm text-red-400 cursor-pointer">Logout</div>
+      <div className="flex flex-col gap-4">
+        {/* SETTINGS */}
+        <button
+          onClick={() => onChange("settings")}
+          className={`
+      text-sm text-left px-3 py-2 rounded-lg transition
+      ${
+        active === "settings"
+          ? "bg-[#282420] text-[#CC983F] shadow-[0_0_20px_rgba(204,152,63,0.4)]"
+          : "text-gray-300 hover:bg-white/5"
+      }
+    `}
+        >
+          Settings
+        </button>
+
+        {/* LOGOUT */}
+        <div className="text-sm text-red-400 cursor-pointer">Logout</div>
+      </div>
     </aside>
   );
 }

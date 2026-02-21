@@ -9,7 +9,7 @@ import TicketForm from "./TicketForm";
 import { plan } from "@/src/data/plan";
 import { Menu } from "lucide-react";
 
-export type DashboardTab = "dashboard" | "billing" | "support";
+export type DashboardTab = "dashboard" | "billing" | "support" | "settings";
 
 export default function DashboardLayout() {
   const [activeTab, setActiveTab] = useState<DashboardTab>("dashboard");
@@ -20,7 +20,9 @@ export default function DashboardLayout() {
       ? "My Courses"
       : activeTab === "billing"
         ? "Plan & Billing"
-        : "Support Ticket";
+        : activeTab === "support"
+          ? "Support Ticket"
+          : "Settings";
 
   return (
     <div className="min-h-screen bg-[#1b1a17] text-white relative flex w-fit">
@@ -173,6 +175,33 @@ export default function DashboardLayout() {
                 <div>SR#000001</div>
                 <div>SR#000001</div>
               </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === "settings" && (
+          <div className="flex flex-col gap-10 max-w-lg">
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Account Settings</h3>
+              <p className="text-gray-400 text-sm">
+                Manage your profile and preferences.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="border border-[#CC983F]/30 rounded-lg p-4">
+                <p className="text-sm">Email</p>
+                <p className="text-gray-400 text-sm">user@email.com</p>
+              </div>
+
+              <div className="border border-[#CC983F]/30 rounded-lg p-4">
+                <p className="text-sm">Password</p>
+                <p className="text-gray-400 text-sm">••••••••</p>
+              </div>
+
+              <button className="bg-[#CC983F] text-black py-3 rounded-lg font-semibold">
+                Update Profile
+              </button>
             </div>
           </div>
         )}

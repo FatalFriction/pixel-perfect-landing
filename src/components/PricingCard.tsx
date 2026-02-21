@@ -26,7 +26,7 @@ export default function PricingCard({
     <div
       className={`
         relative group
-        max-w-60 md:w-full
+        max-w-60 md:w-full md:max-w-full
         min-h-105 md:min-h-130
         ${highlighted ? "md:-mt-6 md:pt-10 md:min-h-145" : ""}
         rounded-2xl p-5 md:p-6
