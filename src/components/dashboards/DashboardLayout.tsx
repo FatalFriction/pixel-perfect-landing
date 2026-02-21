@@ -8,6 +8,7 @@ import TeamCoaching from "../TeamCoaching";
 import TicketForm from "./TicketForm";
 import { plan } from "@/src/data/plan";
 import { Menu } from "lucide-react";
+import SettingsView from "./SettingsView";
 
 export type DashboardTab = "dashboard" | "billing" | "support" | "settings";
 
@@ -179,32 +180,7 @@ export default function DashboardLayout() {
           </div>
         )}
 
-        {activeTab === "settings" && (
-          <div className="flex flex-col gap-10 max-w-lg">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Account Settings</h3>
-              <p className="text-gray-400 text-sm">
-                Manage your profile and preferences.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="border border-[#CC983F]/30 rounded-lg p-4">
-                <p className="text-sm">Email</p>
-                <p className="text-gray-400 text-sm">user@email.com</p>
-              </div>
-
-              <div className="border border-[#CC983F]/30 rounded-lg p-4">
-                <p className="text-sm">Password</p>
-                <p className="text-gray-400 text-sm">••••••••</p>
-              </div>
-
-              <button className="bg-[#CC983F] text-black py-3 rounded-lg font-semibold">
-                Update Profile
-              </button>
-            </div>
-          </div>
-        )}
+        {activeTab === "settings" && <SettingsView />}
       </main>
     </div>
   );
